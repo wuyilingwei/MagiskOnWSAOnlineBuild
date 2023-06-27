@@ -1,9 +1,6 @@
 name: Build and publish
 
 on:
-  push:
-    branches:
-      - main
   schedule:
     # this means every other Saturday at 12:00 UTC
     - cron: '0 12 * * 6/2'
