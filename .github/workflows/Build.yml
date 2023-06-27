@@ -1,22 +1,47 @@
-name: Build
+name: Build and publish
+
 on:
   push:
+    branches:
+      - main
+
 jobs:
-  build-and-publish:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Install dependencies
-        run: sudo apt-get install -y python3 python3-pip python3-venv python3-dev libffi-dev libssl-dev build-essential
-      - name: Build
-        run: ./MagiskOnWSALocal/scripts/build.sh --arch x64 --release-type retail --root-sol magisk --gapps-brand MindTheGapps --remove-amazon --compress --magisk-ver stable --compress-format 7z
-      - name: Publish release
-        uses: actions/upload-release-asset@v1.0.2
-        with:
-          upload_url: ${{ env.upload_url }}
-          asset_path: ./MagiskOnWSALocal/output/*.7z
-          asset_name: $(basename ${{ github.event.head_commit.modified[0] }})
-          asset_content_type: application/x-7z-compressed
-        env:
-          upload_url: ${{ secrets.upload_url }}
+    - name: Install Git
+      run: sudo apt-get install git
+
+    - name: Clone repository
+      run: git clone https://github.com/LSPosed/MagiskOnWSALocal.git
+
+    - name: Install dependencies
+      run: |
+        cd MagiskOnWSALocal
+        # insert the commands to install dependencies here
+        # since dependencies are not specified, I will leave this comment here for you to replace with the appropriate commands
+
+    - name: Build
+      run: |
+        cd MagiskOnWSALocal
+        chmod +x ./scripts/build.sh
+        ./scripts/build.sh --arch x64 --release-type retail --root-sol magisk --gapps-brand MindTheGapps --remove-amazon --compress --magisk-ver stable --compress-format 7z
+
+    - name: Setup GitHub CLI
+      run: |
+        sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+        sudo apt-add-repository https://cli.github.com/packages
+        sudo apt update
+        sudo apt install gh
+
+    - name: Authenticate with GitHub CLI
+      run: echo "${{ secrets.publish_TOKEN }}" | gh auth login --with-token
+
+    - name: Publish new release
+      run: |
+        cd MagiskOnWSALocal/output
+        FILE=$(ls *.7z)
+        VERSION=$(date +%Y%m%d%H%M)
+        gh release create "Build-$VERSION" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "Build $(date +%Y%m%d)" -n "Automatic build" --prerelease
+        gh release delete "Build-$(date --date='-1 day' +%Y%m%d)" -y -R yige-yigeren/MagiskOnWSAAuto
