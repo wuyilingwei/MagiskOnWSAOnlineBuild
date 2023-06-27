@@ -28,6 +28,7 @@ jobs:
         # Install qemu-img
         sudo apt-get update
         sudo apt-get install -y qemu-utils
+        sudo apt-get install -y qemu-utils attr
         # insert the commands to install other dependencies here
         # since dependencies are not specified, I will leave this comment here for you to replace with the appropriate commands
 
