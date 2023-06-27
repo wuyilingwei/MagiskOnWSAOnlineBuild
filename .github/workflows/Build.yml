@@ -22,6 +22,15 @@ jobs:
         # insert the commands to install dependencies here
         # since dependencies are not specified, I will leave this comment here for you to replace with the appropriate commands
 
+    - name: Install dependencies
+      run: |
+        cd MagiskOnWSALocal
+        # Install qemu-img
+        sudo apt-get update
+        sudo apt-get install -y qemu-utils
+        # insert the commands to install other dependencies here
+        # since dependencies are not specified, I will leave this comment here for you to replace with the appropriate commands
+
     - name: Build
       run: |
         cd MagiskOnWSALocal
@@ -36,7 +45,7 @@ jobs:
         sudo apt install gh
 
     - name: Authenticate with GitHub CLI
-      run: echo "${{ secrets.publish_TOKEN }}" | gh auth login --with-token
+      run: echo "${{ secrets.PUBLISH_TOKEN }}" | gh auth login --with-token
 
     - name: Publish new release
       run: |
