@@ -10,12 +10,12 @@ jobs:
       - name: Install dependencies
         run: sudo apt-get install -y python3 python3-pip python3-venv python3-dev libffi-dev libssl-dev build-essential
       - name: Build
-        run: ./scripts/build.sh --arch x64 --release-type retail --root-sol magisk --gapps-brand MindTheGapps --remove-amazon --compress --magisk-ver stable --compress-format 7z
+        run: ./MagiskOnWSALocal/scripts/build.sh --arch x64 --release-type retail --root-sol magisk --gapps-brand MindTheGapps --remove-amazon --compress --magisk-ver stable --compress-format 7z
       - name: Publish release
         uses: actions/upload-release-asset@v1.0.2
         with:
           upload_url: ${{ env.upload_url }}
-          asset_path: ./output/*.7z
+          asset_path: ./MagiskOnWSALocal/output/*.7z
           asset_name: $(basename ${{ github.event.head_commit.modified[0] }})
           asset_content_type: application/x-7z-compressed
         env:
