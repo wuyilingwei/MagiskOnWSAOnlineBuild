@@ -58,7 +58,9 @@ jobs:
         zip -r "${DIR%/}.zip" "$DIR"
         FILE=$(ls *.zip)
         VERSION=$(date +%Y%m%d%H%M)
-        gh release create "Build-$VERSION" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "Build $(date +%Y%m%d)" -n "Automatic build" --prerelease
+        # Extract the release name from the file name by splitting on underscores and taking the first two parts
+        NAME=$(echo $FILE | cut -d '_' -f -2)
+        gh release create "$NAME-$VERSION" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "$NAME $(date +%Y%m%d)" -n "由GitHub Action自动构建的最新版MagiskOnWSA"
 
     - name: Delete old releases
       run: |
