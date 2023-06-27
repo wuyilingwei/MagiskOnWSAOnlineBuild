@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  schedule:
+    # this means every other Saturday at 12:00 UTC
+    - cron: '0 12 * * 6/2'
 
 jobs:
   build:
@@ -56,4 +59,9 @@ jobs:
         FILE=$(ls *.zip)
         VERSION=$(date +%Y%m%d%H%M)
         gh release create "Build-$VERSION" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "Build $(date +%Y%m%d)" -n "Automatic build" --prerelease
-        gh release delete "Build-$(date --date='-1 day' +%Y%m%d)" -y -R yige-yigeren/MagiskOnWSAAuto
+
+    - name: Delete old releases
+      run: |
+        for release in $(gh release list -R yige-yigeren/MagiskOnWSAAuto --json tagName -q '.[].tagName'); do
+          gh release delete $release -y -R yige-yigeren/MagiskOnWSAAuto
+        done
