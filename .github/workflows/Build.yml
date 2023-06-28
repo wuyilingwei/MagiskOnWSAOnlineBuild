@@ -20,12 +20,6 @@ jobs:
     - name: Install dependencies
       run: |
         cd MagiskOnWSALocal
-        # insert the commands to install dependencies here
-        # since dependencies are not specified, I will leave this comment here for you to replace with the appropriate commands
-
-    - name: Install dependencies
-      run: |
-        cd MagiskOnWSALocal
         # Install qemu-img
         sudo apt-get update
         sudo apt-get install -y qemu-utils
@@ -60,25 +54,55 @@ jobs:
         NAME=$(echo $FILE | cut -d '_' -f -2)
         # Define the release note
         NOTES=$(cat << EOF
-        **由GitHub Action自动构建的最新版MagiskOnWSA**
+        **自动构建最新的带有Magisk和Google Play的适用于 Android™️ 的 Windows 子系统**
+        
+        Based on MagiskOnWSA by LSPosed Contributors
+        
+        Powered by Github Action
+        
+        Workflow written by me
 
-        ## **安装指南**
+        ## **安装与使用指南**
+        
+        下载下方WSA_****.*****.*.*的文件即可（国内环境可能下载非常缓慢，推荐使用[Watt Toolkit](https://steampp.net/)的免费代理加速下载（加速勾选Github））
 
         ### 安装:
 
-        解压文件夹，拷贝全部文件到任意位置（推荐C盘下创建名为WSA的文件夹）  
+        解压文件夹，拷贝全部文件到任意位置（推荐C盘下创建名为WSA的文件夹并拷贝到其中）  
 
-        双击运行*run.bat*
+        双击运行*run.bat*，等待程序安装
 
         ### 更新:
 
-        解压文件夹，关闭安卓子系统，复制文件到你原来安装的文件夹，覆盖文件，并再次运行*run.bat*
+        解压文件夹，**关闭**安卓子系统，复制文件到你原来安装的文件夹，覆盖文件，并再次运行*run.bat*
+        
+        正常的更新不会丢失任何用户数据，但是烦请更新过程中不要乱操作，除非你清楚你在干什么，胡乱操作可能导致跳过迁移数据步骤。
 
         ### 移动:
 
         移动后运行*run.bat*即可
 
-        提示：最好目录中不含有特殊符号（包括中文）
+        提示：最好安装目录中不含有任何复杂符号（中文，各种非英文字符，特殊符号）
+        
+        ## 免责声明
+
+        本仓库仅以公开的方式自动构建Magisk On 适用于 Android™️ 的 Windows 子系统，不提供对于构建正常、软件能正常运行的保证，不保证您数据的安全性与可靠性。
+
+        我不会收集任何数据，仅以原样提供构建。
+        
+        ## 技术支持
+        
+        不提供任何的技术支持，如果构建不正常或者有什么建议，请提出一个[新的Issue](https://github.com/yige-yigeren/MagiskOnWSAAuto/issues/new)。
+        
+        ## Star
+
+        如果这个项目有帮到你，请点个Star，这是对我努力的肯定ヾ(≧▽≦*)o。
+
+        <p align="center">
+          <a href="https://star-history.com/#yige-yigeren//MagiskOnWSAAuto&Date">
+            <img src="https://api.star-history.com/svg?repos=yige-yigeren/MagiskOnWSAAuto&type=Date" alt="Star History Chart">
+          </a>
+        </p>
         EOF
         )
         gh release create "$NAME-B$VERSION" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "$NAME Build$(date +%Y%m%d)" -n "$NOTES"
