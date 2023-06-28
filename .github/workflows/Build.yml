@@ -52,7 +52,7 @@ jobs:
 
         # Define the release note
         NOTES=$(cat << EOF
-        **自动构建最新的带有Magisk和Google Play的适用于 Android™️ 的 Windows 子系统**
+        **自动构建最新的带有Magisk和Google Play的适用于 Android 的 Windows 子系统**
         
         Based on MagiskOnWSA by LSPosed Contributors
         
@@ -60,7 +60,7 @@ jobs:
         
         Workflow written by me
 
-        ## **安装与使用指南**
+        ## **快速安装指南**
         
         下载下方WSA_****.*****.*.*的文件即可（国内环境可能下载非常缓慢，推荐使用[Watt Toolkit](https://steampp.net/)的免费代理加速下载（加速勾选Github））
 
@@ -80,15 +80,21 @@ jobs:
 
         移动后运行*run.bat*即可
 
-        提示：最好安装目录中不含有任何复杂符号（中文，各种非英文字符，特殊符号）
+        #### 提示
+        
+        *不要在安装完成后删除文件，只可以删除压缩包。
+        
+        *最好安装目录中不含有任何复杂符号（中文，各种非英文字符，特殊符号）
         
         ## 链接
         
-        [适用于 Android 的 Windows 子系统™️发行说明](https://learn.microsoft.com/zh-cn/windows/android/wsa/release-notes)
+        [适用于 Android 的 Windows 子系统发行说明](https://learn.microsoft.com/zh-cn/windows/android/wsa/release-notes)
+        
+        [MagiskOnWSA的详细说明](https://github.com/LSPosed/MagiskOnWSALocal#readme) （出现安装问题与运行问题先阅读本文再提Issue）
         
         ## 免责声明
 
-        本仓库仅以公开的方式自动构建Magisk On 适用于 Android™️ 的 Windows 子系统，不提供对于构建正常、软件能正常运行的保证，不保证您数据的安全性与可靠性。
+        本仓库仅以公开的方式自动构建Magisk On 适用于 Android 的 Windows 子系统，不提供对于构建正常、软件能正常运行的保证，不保证您数据的安全性与可靠性。
 
         由于MagiskOnWSA仍然处于更新中，其Build参数可能会变化，本仓库不一定能及时更改，请在安装使用前确保相应参数与你的要求相匹配。
         
@@ -112,7 +118,7 @@ jobs:
           </a>
         </p>
         
-        ## 适用于 Android 的 Windows 子系统™️实用工具
+        ## 适用于 Android 的 Windows 子系统实用工具
         
         **其他开发者创建的工具，仅作建议*
         
