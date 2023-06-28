@@ -82,9 +82,3 @@ jobs:
         EOF
         )
         gh release create "$NAME-B$VERSION" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "$NAME Build$(date +%Y%m%d)" -n "$NOTES"
-        
-    - name: Delete old releases
-      run: |
-        for release in $(gh release list -R yige-yigeren/MagiskOnWSAAuto --json tagName -q '.[].tagName'); do
-          gh release delete $release -y -R yige-yigeren/MagiskOnWSAAuto
-        done
