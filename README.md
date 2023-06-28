@@ -32,7 +32,7 @@
 
 MagiskOnWSALocal is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-## 星标
+## Star
 
 如果这个项目有帮到你，请点个Star，这是对我努力的肯定ヾ(≧▽≦*)o。
 
