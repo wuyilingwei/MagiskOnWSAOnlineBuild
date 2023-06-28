@@ -64,6 +64,8 @@ MagiskOnWSALocal is free software: you can redistribute it and/or modify it unde
         
 [WSA工具箱 On Microsoft Store](https://www.microsoft.com/store/productId/9PPSP2MKVTGT) APK安装，APP管理，文件传输，扫描二维码
 
-Copyright (C) 2023 Yige-Yigeren
+---
+
+**Copyright (C) 2023 Yige-Yigeren**
 
 Android is a trademark of Google LLC. Windows is a trademark of Microsoft Corporation.
