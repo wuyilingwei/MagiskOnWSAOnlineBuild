@@ -31,7 +31,7 @@ jobs:
       run: |
         cd MagiskOnWSALocal
         chmod +x ./scripts/build.sh
-        ./scripts/build.sh --arch x64 --release-type retail --root-sol magisk --gapps-brand MindTheGapps --remove-amazon --magisk-ver stable
+        ./scripts/build.sh --arch x64 --release-type retail --root-sol magisk --gapps-brand MindTheGapps --remove-amazon --magisk-ver stable --compress-format zip
 
     - name: Setup GitHub CLI
       run: |
@@ -45,13 +45,11 @@ jobs:
     - name: Publish new release
       run: |
         cd MagiskOnWSALocal/output
-        # Compress the output directory to zip
-        DIR=$(ls -d */)
-        zip -r "${DIR%/}.zip" "$DIR"
         FILE=$(ls *.zip)
         VERSION=$(date +%Y%m%d%H%M)
         # Extract the release name from the file name by splitting on underscores and taking the first two parts
         NAME=$(echo $FILE | cut -d '_' -f -2)
+
         # Define the release note
         NOTES=$(cat << EOF
         **自动构建最新的带有Magisk和Google Play的适用于 Android™️ 的 Windows 子系统**
@@ -111,4 +109,5 @@ jobs:
         </p>
         EOF
         )
-        gh release create "$NAME-B$VERSION" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "$NAME Build$(date +%Y%m%d)" -n "$NOTES"
+        
+        gh release create "$NAME-$VERSION" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "$NAME $(date +%Y%m%d)" -n "$NOTES"
