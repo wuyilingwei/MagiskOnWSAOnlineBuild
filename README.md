@@ -2,6 +2,8 @@
 
 本项目基于临时克隆MagiskOnWSA，并直接调用build.sh来创建最新版本并发布于Releases。
 
+点击关注（Watch） - 自定义（Custom） - 发布新版本（Releases），以在自动构建新版本后获取邮件通知
+
 默认设置：
 
 每两周运行一次。build参数：稳定版stable；有root权限Root Magisk；带Google Play；移除Amazon store。
