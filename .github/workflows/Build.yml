@@ -81,7 +81,7 @@ jobs:
         提示：最好目录中不含有特殊符号
         EOF
         )
-        gh release create "$NAME-B$VERSION" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "$NAME Build$(date +%Y%m%d)"  -n "$NOTES"
+        gh release create "$NAME-B$VERSION" $FILE --latest -R yige-yigeren/MagiskOnWSAAuto -t "$NAME Build$(date +%Y%m%d)"  -n "$NOTES"
         
     - name: Delete old releases
       run: |
