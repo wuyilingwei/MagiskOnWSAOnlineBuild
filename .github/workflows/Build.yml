@@ -1,9 +1,10 @@
-name: Build and publish
+name: Auto Build and Publish
 
 on:
   schedule:
     # this means every other Saturday at 12:00 UTC
-    - cron: '0 12 * * 6/2'
+    - cron: '0 12 * * 6/2' # run every two week
+  workflow_dispatch:
 
 jobs:
   build:
@@ -57,8 +58,31 @@ jobs:
         VERSION=$(date +%Y%m%d%H%M)
         # Extract the release name from the file name by splitting on underscores and taking the first two parts
         NAME=$(echo $FILE | cut -d '_' -f -2)
-        gh release create "$NAME-$VERSION" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "$NAME $(date +%Y%m%d)" -n "由GitHub Action自动构建的最新版MagiskOnWSA"
+        # Define the release note
+        NOTES=$(cat << EOF
+        **由GitHub Action自动构建的最新版MagiskOnWSA**
 
+        ## **安装指南**
+
+        ### 安装:
+
+        解压文件夹，拷贝全部文件到任意位置（推荐C盘下创建名为WSA的文件夹）  
+
+        双击运行*run.bat*
+
+        ### 更新:
+
+        解压文件夹，关闭安卓子系统，复制文件到你原来安装的文件夹，覆盖文件，并再次运行*run.bat*
+
+        ### 移动:
+
+        移动后运行*run.bat*即可
+
+        提示：最好目录中不含有特殊符号
+        EOF
+        )
+        gh release create "$NAME-B$VERSION" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "$NAME Build$(date +%Y%m%d)"  -n "$NOTES"
+        
     - name: Delete old releases
       run: |
         for release in $(gh release list -R yige-yigeren/MagiskOnWSAAuto --json tagName -q '.[].tagName'); do
