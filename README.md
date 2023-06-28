@@ -29,6 +29,12 @@
 不对错误的Build造成的数据损坏与丢失负任何责任。
         
 我不会收集任何数据，仅以原样提供构建。
+
+## 链接
+        
+[适用于 Android 的 Windows 子系统发行说明](https://learn.microsoft.com/zh-cn/windows/android/wsa/release-notes)
+        
+[MagiskOnWSA的详细说明](https://github.com/LSPosed/MagiskOnWSALocal#readme) （出现安装问题与运行问题先阅读本文再提Issue）
         
 ## 技术支持
         
@@ -50,4 +56,14 @@ MagiskOnWSALocal is free software: you can redistribute it and/or modify it unde
   </a>
 </p>
 
+## 适用于 Android 的 Windows 子系统实用工具
+        
+**其他开发者创建的工具，仅作建议*
+        
+[APK安装程序 On Microsoft Store](https://www.microsoft.com/store/productId/9P2JFQ43FPPG) 提供一键式APK安装，可绑定APK文件
+        
+[WSA工具箱 On Microsoft Store](https://www.microsoft.com/store/productId/9PPSP2MKVTGT) APK安装，APP管理，文件传输，扫描二维码
+
 Copyright (C) 2023 Yige-Yigeren
+
+Android is a trademark of Google LLC. Windows is a trademark of Microsoft Corporation.
