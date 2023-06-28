@@ -78,7 +78,7 @@ jobs:
 
         移动后运行*run.bat*即可
 
-        提示：最好目录中不含有特殊符号
+        提示：最好目录中不含有特殊符号（包括中文）
         EOF
         )
         gh release create "$NAME-B$VERSION" $FILE --latest -R yige-yigeren/MagiskOnWSAAuto -t "$NAME Build$(date +%Y%m%d)"  -n "$NOTES"
