@@ -122,4 +122,4 @@ jobs:
         EOF
         )
         
-        gh release create "$NAME-$VERSION" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "$NAME $(date +%Y%m%d)" -n "$NOTES"
+        gh release create "$NAME-B$VERSION" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "$NAME Build$(date +%Y%m%d)" -n "$NOTES"
