@@ -57,7 +57,7 @@ jobs:
         VERSION=$(date +%Y%m%d%H%M)
         # Extract the release name from the file name by splitting on underscores and taking the first two parts
         NAME=$(echo $FILE | cut -d '_' -f -2)
-        gh release create "$NAME-$VERSION" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "$NAME $(date +%Y%m%d)" -n "由GitHub Action自动构建的最新版MagiskOnWSA"
+        gh release create "$NAME-B$VERSION" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "$NAME Build$(date +%Y%m%d)" -n **"由GitHub Action自动构建的最新版MagiskOnWSA**  \n##**使用指南**  \n### 安装：  \n解压文件夹，拷贝全部文件到任意位置（推荐C盘下创建名为WSA的文件夹）  \n双击运行*run.bat*  \n### 更新：  \n解压文件夹，关闭安卓子系统，复制文件到你原来安装的文件夹，覆盖文件，并再次运行*run.bat*  \n###移动：  \n移动后运行*run.bat*即可  \n提示：最好目录中不含有特殊符号"
 
     - name: Delete old releases
       run: |
