@@ -1,9 +1,9 @@
-name: Build and publish
+name: Auto Build and Publish
 
 on:
   schedule:
     # this means every other Saturday at 12:00 UTC
-    - cron: '0 12 * * 6/2'
+    - cron: '0 12 * * 6/2' # run every two week
   workflow_dispatch:
 
 jobs:
