@@ -30,7 +30,7 @@ jobs:
       
     - name: Delete old releases and tags
     env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
     run: |
       # Fetch all tags
       git fetch --tags
