@@ -3,7 +3,7 @@ name: Auto Build and Publish
 on:
   schedule:
     # this means every other Saturday at 12:00 UTC
-    - cron: '0 12 * * 6' # run every two week
+    - cron: '0 12 * * 6/2' # run every two week
   workflow_dispatch:
   push:
     branches:
