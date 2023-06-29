@@ -11,14 +11,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.PUBLISH_TOKEN }}
-      
     - name: Install Git
       run: sudo apt-get install git
+      
+    - name: Setup GitHub CLI
+      run: |
+        curl -sSL https://github.com/cli/cli/releases/download/v2.0.0/gh_2.0.0_linux_amd64.tar.gz -o gh.tar.gz
+        tar xzf gh.tar.gz
+        sudo install gh*/bin/gh /usr/local/bin
 
+    - name: Authenticate with GitHub CLI
+      run: echo "${{ secrets.PUBLISH_TOKEN }}" | gh auth login --with-token
+      
     - name: Delete old releases and tags
       run: |
         # Fetch all tags
