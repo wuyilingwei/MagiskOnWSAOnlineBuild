@@ -14,19 +14,6 @@ jobs:
     - name: Install Git
       run: sudo apt-get install git
 
-    - name: Clone repository
-      run: git clone https://github.com/LSPosed/MagiskOnWSALocal.git
-
-    - name: Install dependencies
-      run: |
-        cd MagiskOnWSALocal
-        # Install qemu-img
-        sudo apt-get update
-        sudo apt-get install -y qemu-utils
-        sudo apt-get install -y qemu-utils attr
-        # insert the commands to install other dependencies here
-        # since dependencies are not specified, I will leave this comment here for you to replace with the appropriate commands
-
 
     - name: Setup GitHub CLI
       run: |
@@ -36,20 +23,23 @@ jobs:
 
     - name: Authenticate with GitHub CLI
       run: echo "${{ secrets.PUBLISH_TOKEN }}" | gh auth login --with-token
-      
-    - name: Check for existing releases
-      id: check_release
+    
+    - name: Delete old releases and tags
       run: |
-        RELEASES=$(gh release list -R yige-yigeren/MagiskOnWSAOnlineBuild | wc -l)
-        echo "RELEASE_COUNT=$RELEASES" >> $GITHUB_ENV
-          
-    - name: Delete old releases
-      if: env.RELEASE_COUNT > 0
-      run: |
-        for TAG in $(gh release list -R yige-yigeren/MagiskOnWSAOnlineBuild | cut -f 1); do
-          gh release delete -y $TAG
+        # Fetch all tags
+        git fetch --tags
+
+        # Loop over all releases and delete them
+        for release in $(gh release list -R yige-yigeren/MagiskOnWSAAuto | cut -f 1); do
+          gh release delete $release -R yige-yigeren/MagiskOnWSAAuto -y
         done
-      
+
+        # Loop over all tags and delete them
+        for tag in $(git tag -l); do
+          git tag -d $tag
+          git push origin :refs/tags/$tag
+        done
+
     - name: Publish new release
       run: |
         cd MagiskOnWSALocal/output
