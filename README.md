@@ -70,4 +70,6 @@ MagiskOnWSALocal is free software: you can redistribute it and/or modify it unde
 
 **Copyright (C) 2023 Yige-Yigeren**
 
+使用本项目的发布与代码需同时遵守[反 996 许可证](https://github.com/kattgu7/Anti-996-License/blob/master/LICENSE_CN_EN)
+
 Android is a trademark of Google LLC. Windows is a trademark of Microsoft Corporation.
