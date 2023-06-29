@@ -33,11 +33,12 @@ jobs:
       run: |
         # Fetch all tags
         git fetch --tags
-    
+        # Login to GitHub CLI
+        echo "${{ secrets.PUBLISH_TOKEN }}" | gh auth login --with-token
         # Loop over all releases and delete them along with their tags
         gh release list -R yige-yigeren/MagiskOnWSAAuto | while read -r id name tag rest; do
           # Attempt to delete the release and the associated tag, if they exist
-          gh release delete "$name" -R yige-yigeren/MagiskOnWSAAuto -y || echo "No release with tag $name, skipping..."
+          gh release delete "$name" -R yige-yigeren/MagiskOnWSAAuto -y || echo "No release with name $name, skipping..."
           git push origin ":refs/tags/$tag" || echo "No tag named $tag, skipping..."
         done
 
