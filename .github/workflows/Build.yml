@@ -51,7 +51,7 @@ jobs:
     - name: Delete old releases
       if: env.RELEASE_COUNT > 0
       run: |
-        gh release list -R yige-yigeren/MagiskOnWSAOnlineBuild | cut -f 1 | while read TAG; do
+        for TAG in $(gh release list -R yige-yigeren/MagiskOnWSAOnlineBuild | cut -f 1); do
           gh release delete -y $TAG
           git push --delete origin $TAG
         done
