@@ -1,4 +1,4 @@
-# [点击下载最新版本](https://github.com/yige-yigeren/MagiskOnWSAAuto/releases/latest)
+# [点击下载最新版本](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/releases/latest)
 
 本项目基于临时克隆MagiskOnWSA，并直接调用build.sh来创建最新版本并发布于Releases。
 
@@ -40,7 +40,7 @@
         
 ## 技术支持
         
-不提供任何的技术支持，如果自动构建不正常或者有什么建议，请提出一个[新的Issue](https://github.com/yige-yigeren/MagiskOnWSAAuto/issues/new)。
+不提供任何的技术支持，如果自动构建不正常或者有什么建议，请提出一个[新的Issue](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/issues/new)。
         
 关于Android™️子系统运行异常的问题请在MagiskOnWSA提出一个[新的Issue](https://github.com/LSPosed/MagiskOnWSALocal/issues/new/choose)。
 
@@ -54,7 +54,7 @@ MagiskOnWSALocal is free software: you can redistribute it and/or modify it unde
 
 <p align="center">
   <a href="https://star-history.com/#yige-yigeren//MagiskOnWSAAuto&Date">
-    <img src="https://api.star-history.com/svg?repos=yige-yigeren/MagiskOnWSAAuto&type=Date" alt="Star History Chart">
+    <img src="https://api.star-history.com/svg?repos=yige-yigeren/MagiskOnWSAOnlineBuild&type=Date" alt="Star History Chart">
   </a>
 </p>
 
