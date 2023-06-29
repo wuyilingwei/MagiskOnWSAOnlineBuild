@@ -44,8 +44,8 @@ jobs:
       
     - name: Remove old releases and tags
       run: |
-        gh release list -R yige-yigeren/MagiskOnWSAAuto | cut -f 1 | while read TAG; do
-          gh release delete "$TAG" -y -R yige-yigeren/MagiskOnWSAAuto
+        gh release list -R yige-yigeren/MagiskOnWSAOnlineBuild | cut -f 1 | while read TAG; do
+          gh release delete "$TAG" -y -R yige-yigeren/MagiskOnWSAOnlineBuild
           git push --delete origin "$TAG"
         done
       
