@@ -19,14 +19,25 @@ jobs:
     - name: Install Git
       run: sudo apt-get install git
 
-    - name: Delete old releases
+    - name: Delete old releases and tags
       run: |
-        gh release list -R yige-yigeren/MagiskOnWSAAuto | sed 's/|/ /' | awk '{print $1, $8}' | while read -r line; do gh release delete -y "$line"; done
+        # Fetch all tags
+        git fetch --tags
+        # Login to GitHub CLI
+        echo "${{ secrets.PUBLISH_TOKEN }}" | gh auth login --with-token
 
-    - name: Delete old tags
-      run: |
-        git fetch
-        git tag -l | xargs -n 1 git push --delete origin
+        # Loop over all releases and delete them
+        gh release list -R yige-yigeren/MagiskOnWSAAuto | awk -F"\t" '{print $1}' | while read -r release; do
+          gh release view "$release" -R yige-yigeren/MagiskOnWSAAuto > /dev/null 2>&1 && \
+          gh release delete "$release" -R yige-yigeren/MagiskOnWSAAuto -y || \
+          echo "No release with tag $release, skipping..."
+        done
+
+        # Loop over all tags and delete them
+        for tag in $(git tag -l); do
+          git tag -d "$tag"
+          git push origin ":refs/tags/$tag" || echo "No tag named $tag, skipping..."
+        done
 
     - name: Publish new release
       run: |
