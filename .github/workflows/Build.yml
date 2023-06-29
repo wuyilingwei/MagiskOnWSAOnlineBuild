@@ -27,11 +27,6 @@ jobs:
         # insert the commands to install other dependencies here
         # since dependencies are not specified, I will leave this comment here for you to replace with the appropriate commands
 
-    - name: Build
-      run: |
-        cd MagiskOnWSALocal
-        chmod +x ./scripts/build.sh
-        ./scripts/build.sh --arch x64 --release-type retail --root-sol magisk --gapps-brand MindTheGapps --remove-amazon --magisk-ver stable --compress-format zip
 
     - name: Setup GitHub CLI
       run: |
@@ -53,7 +48,6 @@ jobs:
       run: |
         for TAG in $(gh release list -R yige-yigeren/MagiskOnWSAOnlineBuild | cut -f 1); do
           gh release delete -y $TAG
-          git push --delete origin $TAG
         done
       
     - name: Publish new release
