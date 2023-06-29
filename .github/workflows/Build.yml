@@ -17,6 +17,7 @@ jobs:
     - name: Install Git
       run: sudo apt-get install git
 
+
     - name: Setup GitHub CLI
       run: |
         curl -sSL https://github.com/cli/cli/releases/download/v2.0.0/gh_2.0.0_linux_amd64.tar.gz -o gh.tar.gz
@@ -33,7 +34,9 @@ jobs:
 
         # Loop over all releases and delete them
         for release in $(gh release list -R yige-yigeren/MagiskOnWSAAuto | cut -f 1); do
-          gh release delete $release -R yige-yigeren/MagiskOnWSAAuto -y
+          gh release view $release -R yige-yigeren/MagiskOnWSAAuto > /dev/null 2>&1 && \
+          gh release delete $release -R yige-yigeren/MagiskOnWSAAuto -y || \
+          echo "No release with tag $release, skipping..."
         done
 
         # Loop over all tags and delete them
