@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.PUBLISH_TOKEN }}
+        
     - name: Install Git
       run: sudo apt-get install git
       
