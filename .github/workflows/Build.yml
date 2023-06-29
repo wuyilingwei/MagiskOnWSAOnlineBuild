@@ -42,11 +42,18 @@ jobs:
     - name: Authenticate with GitHub CLI
       run: echo "${{ secrets.PUBLISH_TOKEN }}" | gh auth login --with-token
       
-    - name: Remove old releases and tags
+    - name: Check for existing releases
+      id: check_release
+      run: |
+        RELEASES=$(gh release list -R yige-yigeren/MagiskOnWSAOnlineBuild | wc -l)
+        echo "RELEASE_COUNT=$RELEASES" >> $GITHUB_ENV
+          
+    - name: Delete old releases
+      if: env.RELEASE_COUNT > 0
       run: |
         gh release list -R yige-yigeren/MagiskOnWSAOnlineBuild | cut -f 1 | while read TAG; do
-          gh release delete "$TAG" -y -R yige-yigeren/MagiskOnWSAOnlineBuild
-          git push --delete origin "$TAG"
+          gh release delete -y $TAG
+          git push --delete origin $TAG
         done
       
     - name: Publish new release
