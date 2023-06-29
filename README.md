@@ -53,7 +53,7 @@ MagiskOnWSALocal is free software: you can redistribute it and/or modify it unde
 如果这个项目有帮到你，请点个Star，这是对我努力的肯定ヾ(≧▽≦*)o。
 
 <p align="center">
-  <a href="https://star-history.com/#yige-yigeren//MagiskOnWSAOnlineBuild&Date">
+  <a href="https://star-history.com/#yige-yigeren/MagiskOnWSAOnlineBuild&Date">
     <img src="https://api.star-history.com/svg?repos=yige-yigeren/MagiskOnWSAOnlineBuild&type=Date" alt="Star History Chart">
   </a>
 </p>
