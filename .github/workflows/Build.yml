@@ -29,27 +29,26 @@ jobs:
       run: echo "${{ secrets.PUBLISH_TOKEN }}" | gh auth login --with-token
       
     - name: Delete old releases and tags
-    env:
-      GH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
-    run: |
-      # Fetch all tags
-      git fetch --tags
+      env:
+        GH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+      run: |
+        # Fetch all tags
+        git fetch --tags
 
-      # List releases
-      gh release list -R yige-yigeren/MagiskOnWSAAuto
+        # List releases
+        gh release list -R yige-yigeren/MagiskOnWSAAuto
 
-      # List tags
-      git tag -l
+        # List tags
+        git tag -l
 
-      # Delete all releases, including drafts
-      gh release list -R yige-yigeren/MagiskOnWSAAuto | awk -F"\t" '{print $1}' | while read -r release; do
-        gh release delete "$release" -R yige-yigeren/MagiskOnWSAAuto -y
-      done
+        # Delete all releases, including drafts
+        gh release list -R yige-yigeren/MagiskOnWSAAuto | awk -F"\t" '{print $1}' | while read -r release; do
+          gh release delete "$release" -R yige-yigeren/MagiskOnWSAAuto -y
+        done
 
-      # Delete all tags
-      git tag -l | xargs -n 1 git push --delete origin
-
-
+        # Delete all tags
+        git tag -l | xargs -n 1 git push --delete origin
+      
     - name: Publish new release
       run: |
         cd MagiskOnWSALocal/output
