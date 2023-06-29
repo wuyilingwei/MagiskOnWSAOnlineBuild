@@ -3,7 +3,7 @@ name: Auto Build and Publish
 on:
   schedule:
     # this means every other Saturday at 12:00 UTC
-    - cron: '0 12 * * 6/2' # run every two week
+    - cron: '0 12 * * 6' # run every two week
   workflow_dispatch:
 
 jobs:
@@ -41,7 +41,14 @@ jobs:
 
     - name: Authenticate with GitHub CLI
       run: echo "${{ secrets.PUBLISH_TOKEN }}" | gh auth login --with-token
-
+      
+    - name: Remove old releases and tags
+      run: |
+        gh release list -R yige-yigeren/MagiskOnWSAAuto | cut -f 1 | while read TAG; do
+          gh release delete "$TAG" -y -R yige-yigeren/MagiskOnWSAAuto
+          git push --delete origin "$TAG"
+        done
+      
     - name: Publish new release
       run: |
         cd MagiskOnWSALocal/output
