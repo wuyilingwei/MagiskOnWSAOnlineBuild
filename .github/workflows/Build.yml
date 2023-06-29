@@ -29,25 +29,24 @@ jobs:
       run: echo "${{ secrets.PUBLISH_TOKEN }}" | gh auth login --with-token
       
     - name: Delete old releases and tags
-      env:
-        GH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
       run: |
         # Fetch all tags
         git fetch --tags
+        # Login to GitHub CLI
+        echo "${{ secrets.PUBLISH_TOKEN }}" | gh auth login --with-token
 
-        # List releases
-        gh release list -R yige-yigeren/MagiskOnWSAAuto
-
-        # List tags
-        git tag -l
-
-        # Delete all releases, including drafts
+        # Loop over all releases and delete them
         gh release list -R yige-yigeren/MagiskOnWSAAuto | awk -F"\t" '{print $1}' | while read -r release; do
-          gh release delete "$release" -R yige-yigeren/MagiskOnWSAAuto -y
+          gh release view "$release" -R yige-yigeren/MagiskOnWSAAuto > /dev/null 2>&1 && \
+          gh release delete "$release" -R yige-yigeren/MagiskOnWSAAuto -y || \
+          echo "No release with tag $release, skipping..."
         done
 
-        # Delete all tags
-        git tag -l | xargs -n 1 git push --delete origin
+        # Loop over all tags and delete them
+        for tag in $(git tag -l); do
+          git tag -d "$tag"
+          git push origin ":refs/tags/$tag" || echo "No tag named $tag, skipping..."
+        done
       
     - name: Publish new release
       run: |
