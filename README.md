@@ -48,6 +48,8 @@
 
 MagiskOnWSALocal is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
+使用本项目发布的release与代码需同时遵守[反 996 许可证](https://github.com/kattgu7/Anti-996-License/blob/master/LICENSE_CN_EN)
+
 ## 星标
 
 如果这个项目有帮到你，请点个Star，这是对我努力的肯定ヾ(≧▽≦*)o。
@@ -69,7 +71,5 @@ MagiskOnWSALocal is free software: you can redistribute it and/or modify it unde
 ---
 
 **Copyright (C) 2023 Yige-Yigeren**
-
-使用本项目的发布与代码需同时遵守[反 996 许可证](https://github.com/kattgu7/Anti-996-License/blob/master/LICENSE_CN_EN)
 
 Android is a trademark of Google LLC. Windows is a trademark of Microsoft Corporation.
