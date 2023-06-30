@@ -48,7 +48,7 @@
 
 MagiskOnWSALocal is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-使用本项目发布的release与代码需同时遵守[反 996 许可证](https://github.com/kattgu7/Anti-996-License/blob/master/LICENSE_CN_EN)
+使用本项目发布的release与代码需遵守[反劳动压迫许可证](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/blob/main/Additional_LICENSE_CN)
 
 ## 星标
 
