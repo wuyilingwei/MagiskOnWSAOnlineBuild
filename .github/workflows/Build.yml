@@ -63,6 +63,8 @@ jobs:
         
         if [[ "$LATEST_NAME" != "$NAME" ]]
         then
+          # Define the release note
+          NOTES=$(cat << EOF
           **自动构建最新的带有Magisk和Google Play的适用于 Android 的 Windows 子系统**
         
           Based on MagiskOnWSA by LSPosed Contributors
