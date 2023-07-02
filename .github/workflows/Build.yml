@@ -62,7 +62,9 @@ jobs:
         
         # Define the release note
         NOTES=$(cat << EOF
-        **自动构建最新的带有Magisk和Google Play的适用于 Android 的 Windows 子系统**
+        **自动构建的最新的带有Magisk和Google Play的适用于 Android 的 Windows 子系统**
+        
+        Build$(date +%Y%m%d)
         
         Based on MagiskOnWSA by LSPosed Contributors
         
@@ -140,7 +142,7 @@ jobs:
         
         if [[ "$LATEST_RELEASE" != "$NAME" ]]
         then
-          gh release create "$NAME" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "$NAME Build$(date +%Y%m%d)" -n "$NOTES"
+          gh release create "$NAME" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "Magisk_On_$NAME" -n "$NOTES"
         else
           echo "The version has not changed, skipping the release"
         fi
