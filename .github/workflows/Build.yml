@@ -57,12 +57,12 @@ jobs:
         NAME=$(echo $FILE | cut -d '_' -f -2)
 
         # Get the latest release tag
-        LATEST_RELEASE=$(gh release view --repo yige-yigeren/MagiskOnWSAAuto --json version -q ".version")
+        LATEST_RELEASE=$(gh release view --repo yige-yigeren/MagiskOnWSAAuto --json tagName -q ".tagName")
+        # Extract the $NAME part from the latest release
+        LATEST_NAME=$(echo $LATEST_RELEASE | cut -d '-' -f 1)
         
-        if [[ "$LATEST_RELEASE" != "$NAME" ]]
+        if [[ "$LATEST_NAME" != "$NAME" ]]
         then
-          # Define the release note
-          NOTES=$(cat << EOF
           **自动构建最新的带有Magisk和Google Play的适用于 Android 的 Windows 子系统**
         
           Based on MagiskOnWSA by LSPosed Contributors
