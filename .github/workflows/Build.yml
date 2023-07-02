@@ -3,7 +3,7 @@ name: Auto Build and Publish
 on:
   schedule:
     # this means every other Saturday at 12:00 UTC
-    - cron: '0 12 * * 0' # run every two week
+    - cron: '0 12 * * 0' # run every week
   workflow_dispatch:
   push:
     branches:
@@ -59,7 +59,6 @@ jobs:
         # Get the latest release tag
         LATEST_RELEASE=$(gh release view --repo yige-yigeren/MagiskOnWSAAuto --json tagName -q ".tagName")
         # Extract the $NAME part from the latest release
-        LATEST_NAME=$(echo $LATEST_RELEASE | cut -d '-' -f 1)
         
         # Define the release note
         NOTES=$(cat << EOF
@@ -139,9 +138,9 @@ jobs:
         EOF
         )
         
-        if [[ "$LATEST_NAME" != "$NAME" ]]
+        if [[ "$LATEST_RELEASE" != "$NAME" ]]
         then
-          gh release create "$NAME-B$VERSION" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "$NAME Build$(date +%Y%m%d)" -n "$NOTES"
+          gh release create "$NAME" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "$NAME Build$(date +%Y%m%d)" -n "$NOTES"
         else
           echo "The version has not changed, skipping the release"
         fi
