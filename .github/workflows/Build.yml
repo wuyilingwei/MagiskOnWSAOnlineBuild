@@ -57,14 +57,13 @@ jobs:
         NAME=$(echo $FILE | cut -d '_' -f -2)
 
         # Get the latest release tag
-        LATEST_RELEASE=$(gh release view --repo yige-yigeren/MagiskOnWSAAuto --json tagName -q ".tagName")
-        # Extract the $NAME part from the latest release
+        LATEST_RELEASE=$(gh release view --repo yige-yigeren/MagiskOnWSAAuto --json tagName -q ".tagName" || echo "")
         
         # Define the release note
         NOTES=$(cat << EOF
         **自动构建的最新的带有Magisk和Google Play的适用于 Android 的 Windows 子系统**
         
-        Build$(date +%Y%m%d)
+        Build:$(date +%Y%m%d)
         
         Based on MagiskOnWSA by LSPosed Contributors
         
@@ -137,10 +136,12 @@ jobs:
         [APK安装程序 On Microsoft Store](https://www.microsoft.com/store/productId/9P2JFQ43FPPG) 提供一键式APK安装，可绑定APK文件
         
         [WSA工具箱 On Microsoft Store](https://www.microsoft.com/store/productId/9PPSP2MKVTGT) APK安装，APP管理，文件传输，扫描二维码
+        
+        $VERSION
         EOF
         )
         
-        if [[ "$LATEST_RELEASE" != "$NAME" ]]
+        if [[ -z "$LATEST_RELEASE" ]] || [[ "$LATEST_RELEASE" != "$NAME" ]]
         then
           gh release create "$NAME" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "Magisk_On_$NAME" -n "$NOTES"
         else
