@@ -53,7 +53,6 @@ jobs:
       run: |
         cd MagiskOnWSALocal/output
         FILE=$(ls *.zip)
-        VERSION=$(date +%Y%m%d%H%M)
         NAME=$(echo $FILE | cut -d '_' -f -2)
 
         # Get the latest release tag
@@ -71,7 +70,7 @@ jobs:
         
         Workflow written by me
 
-        ## **快速安装指南**
+        ## **安装快速指南**
         
         下载下方WSA_****.*****.*.*的文件即可（国内环境可能下载非常缓慢，推荐使用[Watt Toolkit](https://steampp.net/)的免费代理加速下载（加速勾选Github））
 
@@ -136,8 +135,6 @@ jobs:
         [APK安装程序 On Microsoft Store](https://www.microsoft.com/store/productId/9P2JFQ43FPPG) 提供一键式APK安装，可绑定APK文件
         
         [WSA工具箱 On Microsoft Store](https://www.microsoft.com/store/productId/9PPSP2MKVTGT) APK安装，APP管理，文件传输，扫描二维码
-        
-        $VERSION
         EOF
         )
         
