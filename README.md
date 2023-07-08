@@ -4,13 +4,15 @@
 
 点击关注（Watch） - 自定义（Custom） - 发布新版本（Releases），以在自动构建新版本后获取邮件通知
 
+*发布附件均由Github Action构建并上传，欢迎审阅[build.yml](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/edit/main/.github/workflows/Build.yml)源码并提出修改意见。
+
 默认设置：
 
-每周运行一次，如果版本号已存在则跳过。build参数：稳定版stable；有root权限Root Magisk；带Google Play；移除Amazon store。
+每周六12点（UTC+0）运行一次，如果版本号已存在则跳过发布。build参数：稳定版stable；有root权限(Magisk)；带Google Play；移除Amazon store。
 
 ## 如果要自己构建
 
-请不要直接fork仓库，自己创建仓库后将Build.yml填入即可。
+请不要直接Fork仓库，自己创建仓库后将.github/wokflows/Build.yml填入即可。
 
 必需私有变量：[secrets.PUBLISH_TOKEN](https://github.com/settings/tokens)，用于访问github并发布，请给予仓库相关权限。
 
@@ -31,6 +33,8 @@
 不对错误的Build造成的数据损坏与丢失负任何责任。
         
 我不会收集任何数据，仅以原样提供构建。
+
+*当前仅发布在Github Releases，请勿从其他来源下载，其他来源提供的源文件可能包含恶意程序。
 
 ## 发行说明链接
         
