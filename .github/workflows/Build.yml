@@ -60,7 +60,7 @@ jobs:
         
         # Define the release note
         NOTES=$(cat << EOF
-        **自动构建的最新的带有Magisk和Google Play的适用于 Android 的 Windows 子系统**
+        **由Github Action构建的最新的带有Magisk和Google Play的适用于 Android 的 Windows 子系统**
         
         Build:$(date +%Y%m%d)
         
@@ -69,38 +69,30 @@ jobs:
         Powered by Github Action
         
         Workflow written by me
+        
+        发布附件均由Github Action构建并上传，欢迎审阅[build.yml](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/edit/main/.github/workflows/Build.yml)源码并提出修改意见。
 
         ## **安装快速指南**
         
-        下载下方WSA_****.*****.*.*的文件即可（国内环境可能下载非常缓慢，推荐使用[Watt Toolkit](https://steampp.net/)的免费代理加速下载（加速勾选Github））
+        下载下方WSA_****.*****.*.*的文件即可（国内环境可能下载非常缓慢，推荐使用[Watt Toolkit](https://steampp.net/)的免费代理加速下载（无需注册，加速勾选Github））
 
         ### 安装:
 
-        解压文件夹，拷贝全部文件到任意位置（推荐C盘下创建名为WSA的文件夹并拷贝到其中）  
+        解压文件夹，拷贝全部文件到任意位置（推荐C盘下创建名为WSA的文件夹并拷贝到其中，请记住你的安装位置；推荐安装在固态硬盘上）
 
-        双击运行*run.bat*，等待程序安装
+        运行*run.bat*，等待程序安装
 
         ### 更新:
 
-        解压文件夹，**关闭**安卓子系统，复制文件到你原来安装的文件夹，覆盖文件，并再次运行*run.bat*
+        解压文件夹，**关闭**安卓子系统，复制文件到你原来安装的文件夹，直接覆盖文件，并运行*run.bat*（如果覆盖不了就是你安卓子系统没关）
         
-        正常的更新不会丢失任何用户数据，但是烦请更新过程中不要乱操作，除非你清楚你在干什么，胡乱操作可能导致跳过迁移数据步骤。
-
-        ### 移动:
-
-        移动后运行*run.bat*即可
+        正常的更新不会丢失任何用户数据，但是请更新过程中不要乱操作，除非你清楚你在干什么。
 
         #### 提示
         
-        *不要在安装完成后删除文件，只可以删除压缩包。
+        *不要在安装完成后删除安装目录下的文件。
         
-        *最好安装目录中不含有任何复杂符号（中文，各种非英文字符，特殊符号）
-        
-        ## 链接
-        
-        [适用于 Android 的 Windows 子系统发行说明](https://learn.microsoft.com/zh-cn/windows/android/wsa/release-notes)
-        
-        [MagiskOnWSA的详细说明](https://github.com/LSPosed/MagiskOnWSALocal#readme) （出现安装问题与运行问题先阅读本文再提Issue）
+        *最好安装目录中不含有任何复杂符号（中文，各种非英文字符，特殊符号，空格），避免出现奇怪问题。
         
         ## 免责声明
 
@@ -112,12 +104,28 @@ jobs:
         
         我不会收集任何数据，仅以原样提供构建。
         
+        *当前仅发布在Github Releases，请勿从其他来源下载，其他来源提供的源文件可能包含恶意程序。
+        
+        ## 发行说明链接
+        
+        [适用于 Android 的 Windows 子系统发行说明](https://learn.microsoft.com/zh-cn/windows/android/wsa/release-notes)
+        
+        [MagiskOnWSA的详细说明](https://github.com/LSPosed/MagiskOnWSALocal#readme) （出现安装问题与运行问题先阅读本文再提Issue）
+        
         ## 技术支持
         
-        不提供任何的技术支持，如果自动构建不正常或者有什么建议，请提出一个[新的Issue](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/issues/new)。
+        本项目不提供关于安卓子系统的任何技术支持，如果自动构建不正常或者有什么建议，在本仓库请提出一个[新的Issue](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/issues/new)。
         
-        关于Android™️子系统运行异常的问题请在MagiskOnWSA提出一个[新的Issue](https://github.com/LSPosed/MagiskOnWSALocal/issues/new/choose)。
+        关于Root权限及Google Play运行异常的问题请在MagiskOnWSA提出一个[新的Issue](https://github.com/LSPosed/MagiskOnWSALocal/issues/new/choose)。
+
+        关于电脑无法安装安卓子系统和安卓子系统运行问题，请在[微软社区](https://answers.microsoft.com/zh-hans/newthread)提出一个问题（选择Windows-Windows11-应用程序-Amazon Appstore）
         
+        ## 关于版权
+
+        MagiskOnWSALocal is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+        使用本项目发布的release与代码需遵守[反劳动压迫许可证](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/blob/main/Additional_LICENSE_CN)
+
         ## Star
 
         如果这个项目有帮到你，请点个Star，这是对我努力的肯定ヾ(≧▽≦*)o。
@@ -142,5 +150,5 @@ jobs:
         then
           gh release create "$NAME" $FILE -R yige-yigeren/MagiskOnWSAAuto -t "Magisk_On_$NAME" -n "$NOTES"
         else
-          echo "The version has not changed, skipping the release"
+          echo "The version has not changed, skipping the release."
         fi
