@@ -12,7 +12,7 @@
 
 请不要直接fork仓库，自己创建仓库后将Build.yml填入即可。
 
-必需私有变量：[PUBLISH_TOKEN](https://github.com/settings/tokens)，用于访问github并发布，请给予仓库相关权限。
+必需私有变量：[secrets.PUBLISH_TOKEN](https://github.com/settings/tokens)，用于访问github并发布，请给予仓库相关权限。
 
 相关仓库地址什么的改成自己的。
 
@@ -32,7 +32,7 @@
         
 我不会收集任何数据，仅以原样提供构建。
 
-## 链接
+## 发行说明链接
         
 [适用于 Android 的 Windows 子系统发行说明](https://learn.microsoft.com/zh-cn/windows/android/wsa/release-notes)
         
@@ -40,9 +40,11 @@
         
 ## 技术支持
         
-不提供任何的技术支持，如果自动构建不正常或者有什么建议，请提出一个[新的Issue](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/issues/new)。
+本项目不提供关于安卓子系统的任何技术支持，如果自动构建不正常或者有什么建议，在本仓库请提出一个[新的Issue](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/issues/new)。
         
-关于Android™️子系统运行异常的问题请在MagiskOnWSA提出一个[新的Issue](https://github.com/LSPosed/MagiskOnWSALocal/issues/new/choose)。
+关于Root权限及Google Play运行异常的问题请在MagiskOnWSA提出一个[新的Issue](https://github.com/LSPosed/MagiskOnWSALocal/issues/new/choose)。
+
+关于电脑无法安装安卓子系统和安卓子系统运行问题，请在[微软社区](https://answers.microsoft.com/zh-hans/newthread)提出一个问题（选择Windows-Windows11-应用程序-Amazon Appstore）
 
 ## 关于版权
 
