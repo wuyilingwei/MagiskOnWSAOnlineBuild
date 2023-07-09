@@ -8,7 +8,7 @@
 
 默认设置：
 
-每周六12点（UTC+0）运行一次，如果版本号已存在则跳过发布。build参数：稳定版stable；有root权限(Magisk)；带Google Play；移除Amazon store。
+每周五12点（UTC+0）运行一次，如果版本号已存在则跳过发布。build参数：稳定版stable；有root权限(Magisk)；带Google Play；移除Amazon store。
 
 ## 如果要自己构建
 
