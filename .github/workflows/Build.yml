@@ -46,7 +46,9 @@ jobs:
 
     - name: Setup GitHub CLI
       run: |
-        curl -sSL https://github.com/cli/cli/releases/download/v2.0.0/gh_2.0.0_linux_amd64.tar.gz -o gh.tar.gz
+        # install last CLI
+        version=$(curl --silent "https://api.github.com/repos/cli/cli/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
+        curl -sSL "https://github.com/cli/cli/releases/download/v${version}/gh_${version}_linux_amd64.tar.gz" -o gh.tar.gz
         tar xzf gh.tar.gz
         sudo install gh*/bin/gh /usr/local/bin
 
