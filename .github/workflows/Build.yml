@@ -41,6 +41,12 @@ jobs:
         # build release, if you need change build parameter put here, you can get this by run run.sh or read it.
         PARAMETER="--arch x64 --release-type retail --root-sol magisk --gapps-brand MindTheGapps --remove-amazon --magisk-ver stable --compress-format zip"
         ./scripts/build.sh ${PARAMETER}
+        # Generate timestamp
+        TIMESTAMP=$(date +%Y-%m-%d\ %H:%M:%S)
+        UNIX_TIMESTAMP=$(date +%s)
+      env:
+        BUILD_TIMESTAMP: ${{ steps.build.outputs.timestamp }}
+        BUILD_UNIX_TIMESTAMP: ${{ steps.build.outputs.unix_timestamp }}
 
     - name: Setup GitHub CLI
       run: |
@@ -64,7 +70,7 @@ jobs:
         NOTES=$(cat << EOF
         **由Github Action构建的最新的带有Magisk和Google Play的适用于 Android 的 Windows 子系统**
         
-        Build:$(date +%Y%m%d)
+        Build: ${BUILD_TIMESTAMP} Unix time: ${BUILD_UNIX_TIMESTAMP}
         
         Based on MagiskOnWSA by LSPosed Contributors
         
@@ -155,3 +161,6 @@ jobs:
         else
           echo "The version has not changed, skipping the release."
         fi
+      env:
+        BUILD_TIMESTAMP: ${{ steps.build.outputs.timestamp }}
+        BUILD_UNIX_TIMESTAMP: ${{ steps.build.outputs.unix_timestamp }}
