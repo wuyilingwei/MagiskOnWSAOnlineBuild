@@ -48,6 +48,7 @@ jobs:
       run: |
         # install last CLI
         version=$(curl --silent "https://api.github.com/repos/cli/cli/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
+        version=${version#v} 
         curl -sSL "https://github.com/cli/cli/releases/download/v${version}/gh_${version}_linux_amd64.tar.gz" -o gh.tar.gz
         tar xzf gh.tar.gz
         sudo install gh*/bin/gh /usr/local/bin
@@ -159,3 +160,26 @@ jobs:
         else
           echo "The version has not changed, skipping the release."
         fi
+            
+      # Pubilsh to OneDrive Test
+    - name: Check if OneDrive secrets are set
+      id: check_secrets
+      run: |
+        if [[ -z "${{ secrets.ONEDRIVE_CLIENT_ID }}" ]] || [[ -z "${{ secrets.ONEDRIVE_CLIENT_SECRET }}" ]] || [[ -z "${{ secrets.ONEDRIVE_TENANT_ID }}" ]]
+        then
+          echo "OneDrive secrets are not set. Skipping upload step."
+          echo "::set-output name=skip::true"
+        else
+          echo "OneDrive secrets are set. Proceeding to upload step."
+          echo "::set-output name=skip::false"
+        fi
+
+    - name: Upload to OneDrive
+      if: steps.check_secrets.outputs.skip == 'false'
+      uses: isvtx/onedrive-upload-action@master
+      with:
+        client-id: ${{ secrets.ONEDRIVE_CLIENT_ID }}
+        client-secret: ${{ secrets.ONEDRIVE_CLIENT_SECRET }}
+        tenant-id: ${{ secrets.ONEDRIVE_TENANT_ID }}
+        filepath: ./MagiskOnWSALocal/output/*.zip
+        remote-dir: '/Release/『Publish』/WSA'
