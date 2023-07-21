@@ -1,4 +1,6 @@
 # [点击下载最新版本](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/releases/latest)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fyige-yigeren%2FMagiskOnWSAOnlineBuild.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fyige-yigeren%2FMagiskOnWSAOnlineBuild?ref=badge_shield)
+
 
 本项目基于临时克隆MagiskOnWSA，并直接调用build.sh来创建最新版本并发布于Releases。
 
@@ -79,3 +81,7 @@ MagiskOnWSALocal is free software: you can redistribute it and/or modify it unde
 **Copyright (C) 2023 Yige-Yigeren**
 
 Android is a trademark of Google LLC. Windows is a trademark of Microsoft Corporation.
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fyige-yigeren%2FMagiskOnWSAOnlineBuild.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fyige-yigeren%2FMagiskOnWSAOnlineBuild?ref=badge_large)
