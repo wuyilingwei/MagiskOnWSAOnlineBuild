@@ -20,7 +20,7 @@ Please do not directly fork the repository. Instead, create your own repository 
 
 Because some people are indiscriminately forking this repository, all automatic activators are deactivated by default, please enable them yourself. The operation of releasing releases will be activated by an action in another private repository.
 
-Required private variable: [secrets.PUBLISH_TOKEN](https://github.com/settings/tokens), for accessing GitHub and releasing, please grant public_repo permissions.
+Required private variable: [secrets.PUBLISH_TOKEN](https://github.com/settings/tokens), for accessing GitHub and releasing, please grant 'repo', 'read:org' permissions.
 
 Change the repository addresses to your own.
 
@@ -52,7 +52,7 @@ I will not collect any data and will provide the build as is.
         
 This project does not provide any technical support for the Android subsystem. If the automatic build is abnormal or if you have any suggestions, please raise a [new Issue](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/issues/new) in this repository.
         
-For issues related to Root access and Google Play running abnormally, please raise a [new Issue](https://github.com/LSPosed/MagiskOnWSALocal/issues/new/choose) in MagiskOnWSA.
+For 议题 related to Root access and Google Play running abnormally, please raise a [new Issue](https://github.com/LSPosed/MagiskOnWSALocal/issues/new/choose) in MagiskOnWSA.
 
 For problems with the computer being unable to install the Android subsystem and running problems with the Android subsystem, please raise a question in the [Microsoft Community](https://answers.microsoft.com/zh-hans/newthread) (Choose Windows-Windows11-Applications-Amazon Appstore)
 
