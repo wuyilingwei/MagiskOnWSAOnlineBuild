@@ -1,15 +1,16 @@
 name: Auto Build and Publish
 
 on:
-  schedule: # run automatically, generally they update on tuesday to thursday, so i think run every friday noon is best
+  # In order to solve some blind people who don't read the README at all, all automatic triggers are not enabled by default
+  # schedule: # run automatically, generally they update on tuesday to thursday, so i think run every friday noon is best
     # if you want set other time can use this website: http://cron.ciding.cc/
-    - cron: '0 12 * * 5' # run every week Friday at 12:00 UTC
+    # - cron: '0 12 * * 5' # run every week Friday at 12:00 UTC
   workflow_dispatch: # allow run by manual command
-  push: # run when workflows file changed
-    branches:
-      - main
-    paths:
-      - '.github/workflows/*'
+  # push: # run when workflows file changed
+    # branches:
+      # - main
+    # paths:
+      # - '.github/workflows/*'
 
 jobs:
   build:
