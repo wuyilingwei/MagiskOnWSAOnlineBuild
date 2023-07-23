@@ -1,6 +1,18 @@
-# [点击下载最新版本](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/releases/latest)
+Switch language
 
 [简体中文](README.md) | [Engilsh](READEME_EN.md)
+
+## [点击下载最新版本](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/releases/latest)
+
+# ⚠️重要提示⚠️ 
+
+**如果你不阅读这些提示，你和你的家人可能受到我的辱骂——这是对他人劳动成果的不尊重**
+
+请不要Fork这个仓库，自己创建一个仓库并导入文件。
+
+Fork会导致你Fork的仓库的github action计数最终统计到上游仓库并导致上游仓库被封禁，（MagiskOnWSA就是这么被封的）
+
+## 工作原理
 
 本项目基于临时克隆MagiskOnWSA，并直接调用build.sh来创建最新版本并发布于Releases。
 
@@ -10,15 +22,13 @@
 
 默认设置：
 
-每周五12点（UTC+0）运行一次，修改workflow文件后自动运行，如果版本号已存在则跳过发布。（这些项默认不启用）
+每周五12点（UTC+0）运行一次，修改workflow文件后自动运行，如果版本号已存在则跳过发布。
 
 build参数：稳定版stable；有root权限(Magisk)；带Google Play；移除Amazon store。
 
 ## 如果要自己构建
 
 请不要直接Fork仓库，自己创建仓库后将.github/wokflows/Build.yml填入即可。
-
-因为有瞎子fork本仓库，默认改为不激活所有自动激活器，请自行启用。发布release的操作将由另一个私有仓库的action激活。
 
 必需私有变量：[secrets.PUBLISH_TOKEN](https://github.com/settings/tokens)，用于访问github并发布，请给予'repo', 'read:org'权限。
 
