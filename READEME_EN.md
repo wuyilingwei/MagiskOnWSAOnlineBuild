@@ -1,5 +1,7 @@
 # [Click to download the latest version](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/releases/latest)
 
+[简体中文](README.md) | [Engilsh](READEME_EN.md)
+
 This project is based on a temporary clone of MagiskOnWSA and uses build.sh directly to create and release the latest version.
 
 Click Watch - Custom - Releases to receive email notifications after new versions are automatically built.
