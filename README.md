@@ -1,6 +1,6 @@
 # [点击下载最新版本](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/releases/latest)
 
-[简体中文](README.md) | [Engilsh](READEME_EN)
+[简体中文](README.md) | [Engilsh](READEME_EN.md)
 
 本项目基于临时克隆MagiskOnWSA，并直接调用build.sh来创建最新版本并发布于Releases。
 
