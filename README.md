@@ -20,7 +20,7 @@ build参数：稳定版stable；有root权限(Magisk)；带Google Play；移除A
 
 因为有瞎子fork本仓库，默认改为不激活所有自动激活器，请自行启用。发布release的操作将由另一个私有仓库的action激活。
 
-必需私有变量：[secrets.PUBLISH_TOKEN](https://github.com/settings/tokens)，用于访问github并发布，请给予public_repo权限。
+必需私有变量：[secrets.PUBLISH_TOKEN](https://github.com/settings/tokens)，用于访问github并发布，请给予'repo', 'read:org'权限。
 
 相关仓库地址什么的改成自己的。
 
