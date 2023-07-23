@@ -14,7 +14,9 @@
 
 请不要直接Fork仓库，自己创建仓库后将.github/wokflows/Build.yml填入即可。
 
-必需私有变量：[secrets.PUBLISH_TOKEN](https://github.com/settings/tokens)，用于访问github并发布，请给予仓库相关权限。
+因为有瞎子fork本仓库，默认改为不激活所有自动激活器，请自行启用。发布release的操作将由另一个私有仓库的action激活。
+
+必需私有变量：[secrets.PUBLISH_TOKEN](https://github.com/settings/tokens)，用于访问github并发布，请给予public_repo权限。
 
 相关仓库地址什么的改成自己的。
 
