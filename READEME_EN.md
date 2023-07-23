@@ -2,6 +2,16 @@
 
 [简体中文](README.md) | [Engilsh](READEME_EN.md)
 
+# ⚠️ Important Note ⚠️
+
+**If you don't read these tips, you and your family may be abused by me - it's disrespectful to the fruits of other people's labor**
+
+Please do not Fork this repository, create a repository yourself and import the files.
+
+Fork will cause the github action count of your Fork warehouse to finally be counted to the upstream warehouse and cause the upstream warehouse to be banned (this is how MagiskOnWSA is blocked)
+
+# How it works
+
 This project is based on a temporary clone of MagiskOnWSA and uses build.sh directly to create and release the latest version.
 
 Click Watch - Custom - Releases to receive email notifications after new versions are automatically built.
@@ -85,3 +95,5 @@ If this project has helped you, please give it a Star. This is an affirmation of
 **Copyright (C) 2023 Yige-Yigeren**
 
 Android is a trademark of Google LLC. Windows is a trademark of Microsoft Corporation.
+
+Translate By ChatGPT-4
