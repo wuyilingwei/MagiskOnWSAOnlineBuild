@@ -4,11 +4,11 @@
 
 # ⚠️ Important Note ⚠️
 
-**If you don't read these tips, you and your family may be abused by me - it's disrespectful to the fruits of other people's labor**
+**If you don't read these tips, you and your family may be curse by me - it's disrespectful to the fruits of other people's labor**
 
 Please do not Fork this repository, create a repository yourself and import the files.
 
-Fork will cause the github action count of your Fork warehouse to finally be counted to the upstream warehouse and cause the upstream warehouse to be banned (this is how MagiskOnWSA is blocked)
+Fork will cause the github action count of your Fork warehouse to finally be counted to the upstream warehouse and cause the upstream warehouse to be banned (this is why MagiskOnWSA is blocked)
 
 # How it works
 
