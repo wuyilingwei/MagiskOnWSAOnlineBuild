@@ -86,9 +86,9 @@ If this project has helped you, please give it a Star. This is an affirmation of
 
 **Tools created by other developers, just for suggestions*
         
-[APK Installer On Microsoft Store](https://www.microsoft.com/store/productId/9P2JFQ43FPPG) provides one-click APK installation, can bind APK file
+[APK Installer On Microsoft Store](https://www.microsoft.com/store/productId/9P2JFQ43FPPG) [On Github](https://github.com/Paving-Base/APK-Installer) provides one-click APK installation, can bind APK file 
         
-[WSA Toolbox On Microsoft Store](https://www.microsoft.com/store/productId/9PPSP2MKVTGT) APK installation, APP management, file transfer, QR code scanning
+[WSA Toolbox On Microsoft Store](https://www.microsoft.com/store/productId/9PPSP2MKVTGT) [On Github](https://github.com/makazeu/WsaToolbox) APK installation, APP management, file transfer, QR code scanning 
 
 ---
 
