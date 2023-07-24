@@ -84,9 +84,9 @@ MagiskOnWSALocal is free software: you can redistribute it and/or modify it unde
         
 **其他开发者创建的工具，仅作建议*
         
-[APK安装程序 On Microsoft Store](https://www.microsoft.com/store/productId/9P2JFQ43FPPG) 提供一键式APK安装，可绑定APK文件
+[APK安装程序 On Microsoft Store](https://www.microsoft.com/store/productId/9P2JFQ43FPPG) [On Github](https://github.com/Paving-Base/APK-Installer) 提供一键式APK安装，可绑定APK文件
         
-[WSA工具箱 On Microsoft Store](https://www.microsoft.com/store/productId/9PPSP2MKVTGT) APK安装，APP管理，文件传输，扫描二维码
+[WSA工具箱 On Microsoft Store](https://www.microsoft.com/store/productId/9PPSP2MKVTGT) [On Github](https://github.com/makazeu/WsaToolbox) APK安装，APP管理，文件传输，扫描二维码
 
 ---
 
