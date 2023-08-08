@@ -1,4 +1,4 @@
-name: Auto Build and Publish
+name: Auto Build Stable and Publish
 
 on:
   schedule: # run automatically, generally they update on tuesday to thursday, so i think run every friday noon is best
