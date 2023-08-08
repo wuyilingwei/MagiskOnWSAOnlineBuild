@@ -40,7 +40,7 @@ jobs:
         cd MagiskOnWSALocal
         chmod +x ./scripts/build.sh
         # build release, if you need change build parameter put here, you can get this by run run.sh or read it.
-        PARAMETER="--arch x64 --release-type RP --root-sol magisk --gapps-brand MindTheGapps --remove-amazon --magisk-ver stable --compress-format zip"
+        PARAMETER="--arch x64 --release-type retail --root-sol magisk --gapps-brand MindTheGapps --remove-amazon --magisk-ver stable --compress-format zip"
         ./scripts/build.sh ${PARAMETER}
         echo "BUILD_TIMESTAMP=$(date -u +"%Y-%m-%d %T")" >> $GITHUB_ENV
         echo "BUILD_UNIX_TIMESTAMP=$(date +%s)" >> $GITHUB_ENV
