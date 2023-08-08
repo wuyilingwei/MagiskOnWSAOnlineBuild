@@ -77,7 +77,7 @@ jobs:
         
         Workflow written by me
         
-        发布附件均由Github Action构建并上传，欢迎审阅[build.yml](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/edit/main/.github/workflows/Build.yml)源码并提出修改意见。
+        发布附件均由Github Action构建并上传，欢迎审阅[Workflows](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/tree/main/.github/workflows)源码并提出修改意见。
 
         ## **安装快速指南**
         
