@@ -1,4 +1,5 @@
 name: Auto Build Preview and Publish
+#this is preview version build workflow
 
 on:
   schedule: # run automatically, generally they update on tuesday to thursday, so i think run every friday noon is best
