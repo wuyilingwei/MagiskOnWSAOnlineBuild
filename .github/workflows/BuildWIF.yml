@@ -68,7 +68,7 @@ jobs:
         NAME=$(echo $FILE | cut -d '_' -f -2)
 
         # Get the latest release tag
-        LATEST_RELEASE=$(gh release view --repo ${{ env.RELEASE_REPOSITORY }} --json tag_name | jq -r '.tag_name')
+        LATEST_RELEASE=$(gh release view --repo ${{ env.RELEASE_REPOSITORY }} --json tagName -q ".tagName" || echo "")
         
         # Define the release note
         NOTES=$(cat << EOF
