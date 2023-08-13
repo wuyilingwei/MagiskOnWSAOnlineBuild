@@ -78,7 +78,9 @@ jobs:
 
         Build: ${{ env.BUILD_TIMESTAMP }} Unix time: ${{ env.BUILD_UNIX_TIMESTAMP }}
 
-        BASE_REPOSITORY: ${{ env.BASE_REPOSITORY }} PARAMETER: ${{ env.PARAMETER }}
+        BASE_REPOSITORY: ${{ env.BASE_REPOSITORY }} 
+        
+        PARAMETER: ${{ env.PARAMETER }}
         
         - Based on MagiskOnWSA by LSPosed Contributors
         
