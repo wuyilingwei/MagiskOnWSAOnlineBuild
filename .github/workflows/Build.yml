@@ -82,11 +82,11 @@ jobs:
         
         - Workflow written by me
         
-        发布附件均由Github Action构建并上传，欢迎审阅[Workflows](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/tree/main/.github/workflows)源码并提出修改意见。
+        发布附件均由Github Action构建并上传，欢迎审阅[Workflows](https://github.com/$RELEASE_REPOSITORY/tree/main/.github/workflows)源码并提出修改意见。
 
         ## **安装快速指南**
         
-        下载下方${FILE}的文件即可（国内环境可能下载非常缓慢，推荐使用[Watt Toolkit](https://steampp.net/)的免费代理加速下载（无需注册，加速勾选Github））
+        下载[最新版Magisk_On_$NAME](https://github.com/$RELEASE_REPOSITORY/releases/download/$NAME/${FILE})的文件即可（国内环境可能下载非常缓慢，推荐使用[Watt Toolkit](https://steampp.net/)的免费代理加速下载（无需注册，加速勾选Github））
 
         ### 安装:
 
