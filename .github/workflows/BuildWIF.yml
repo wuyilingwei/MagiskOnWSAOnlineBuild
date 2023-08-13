@@ -77,6 +77,8 @@ jobs:
         ****该版本为最新的预览版构建，可能存在严重的BUG，普通用户请下载正式发布版***
 
         Build: ${{ env.BUILD_TIMESTAMP }} Unix time: ${{ env.BUILD_UNIX_TIMESTAMP }}
+
+        BASE_REPOSITORY: {{ env.BASE_REPOSITORY }} PARAMETER: ${{ env.PARAMETER }}
         
         - Based on MagiskOnWSA by LSPosed Contributors
         
