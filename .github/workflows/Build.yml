@@ -5,11 +5,6 @@ on:
     # if you want set other time can use this website: http://cron.ciding.cc/
     - cron: '0 12 * * 5' # run every week Friday at 12:00 UTC
   workflow_dispatch: # allow run by manual command
-  push: # run when workflows file changed
-    branches:
-      - main
-    paths:
-      - '.github/workflows/Build.yml'
 
 jobs:
   build:
@@ -67,6 +62,9 @@ jobs:
         FILE=$(ls *.zip)
         NAME=$(echo $FILE | cut -d '_' -f -2)
 
+        # Upload limit, '(' ')' will use '.' install
+        CFILE=$(echo $FILE | sed 's/(/./g; s/)/./g')
+        
         # Get the latest release tag
         LATEST_RELEASE=$(gh release view --repo ${{ env.RELEASE_REPOSITORY }} --json tagName -q ".tagName" || echo "")
         
@@ -86,7 +84,7 @@ jobs:
 
         ## **安装快速指南**
         
-        下载[最新版Magisk_On_$NAME](https://github.com/$RELEASE_REPOSITORY/releases/download/$NAME/${FILE})的文件即可（国内环境可能下载非常缓慢，推荐使用[Watt Toolkit](https://steampp.net/)的免费代理加速下载（无需注册，加速勾选Github））
+        下载[最新版Magisk_On_$NAME](https://github.com/$RELEASE_REPOSITORY/releases/download/$NAME/${CFILE})的文件即可（国内环境可能下载非常缓慢，推荐使用[Watt Toolkit](https://steampp.net/)的免费代理加速下载（无需注册，加速勾选Github））
 
         ### 安装:
 
