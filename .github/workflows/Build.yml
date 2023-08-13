@@ -73,6 +73,8 @@ jobs:
         **由Github Action构建的最新的**稳定版通道**的带有Magisk和Google Play的适用于 Android 的 Windows 子系统**
         
         Build: ${{ env.BUILD_TIMESTAMP }} Unix time: ${{ env.BUILD_UNIX_TIMESTAMP }}
+
+        BASE_REPOSITORY: {{ env.BASE_REPOSITORY }} PARAMETER: ${{ env.PARAMETER }}
         
         - Based on MagiskOnWSA by LSPosed Contributors
         
