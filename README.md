@@ -18,6 +18,8 @@ Fork会导致你Fork的仓库的github action计数最终统计到上游仓库�
 
 *发布附件均由Github Action构建并上传，欢迎审阅[build.yml](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/edit/main/.github/workflows/Build.yml)源码并提出修改意见。
 
+*至于有什么更好的发布的方法也可以，也欢迎提出建议。
+
 默认设置：
 
 每周五12点（UTC+0）运行一次，修改workflow文件后自动运行，如果版本号已存在则跳过发布。
@@ -25,7 +27,6 @@ Fork会导致你Fork的仓库的github action计数最终统计到上游仓库�
 正式发布版：build参数：稳定版stable；有root权限(Magisk)；带Google Play；移除Amazon store。
 
 预发布版：build参数：最新版RP；有root权限(Magisk)；带Google Play；移除Amazon store。
-
 
 <details>
 <summary><h2>如何自己构建</h2></summary>
@@ -35,12 +36,6 @@ Fork会导致你Fork的仓库的github action计数最终统计到上游仓库�
 
 仓库必需私有变量：[secrets.PUBLISH_TOKEN](https://github.com/settings/tokens)，用于访问github并发布，请给予'repo', 'read:org'权限。
 </details>
-
-## 运行原理
-
-提前预填好build.sh的参数，跳过run.sh直接执行（需要修改参数请run.sh里获取），使用Github Releases发布。
-
-至于有什么更好的发布的方法也可以，也欢迎提出建议。
 
 ## 免责声明
 
