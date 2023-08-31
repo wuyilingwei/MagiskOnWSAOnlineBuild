@@ -1,44 +1,41 @@
-[简体中文](README.md) | [Engilsh](READEME_EN.md)
+[Simplified Chinese](README.md) | [Engilsh](READEME_EN.md)
 
-# [Click to download the latest version](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/releases/latest)
+## [Click to download the latest version](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/releases/latest)
 
-# ⚠️ Important Note ⚠️
+## ⚠️ Important Tips ⚠️ 
 
-**If you don't read these tips, you and your family may be curse by me - it's disrespectful to the fruits of other people's labor**
+**If you don't read these tips, you and your family may be subjected to verbal abuse from me - this is disrespectful to the fruits of other people's labour**
 
-Please do not Fork this repository, create a repository yourself and import the files.
+Please do not Fork this repository, create one yourself and import the files.
 
-Fork will cause the github action count of your Fork warehouse to finally be counted to the upstream warehouse and cause the upstream warehouse to be banned (this is why MagiskOnWSA is blocked)
+Forking will cause the github action count of the repository you Forked to end up counting to the upstream repository and cause the upstream repository to be blocked, (that's how MagiskOnWSA got blocked)
 
-# How it works
+## How it works
 
-This project is based on a temporary clone of MagiskOnWSA and uses build.sh directly to create and release the latest version.
+This project is based on a temporary clone of MagiskOnWSA and a direct call to build.sh to create the latest version and release it to Releases.
 
-Click Watch - Custom - Releases to receive email notifications after new versions are automatically built.
+Click Watch - Custom - Publish New Version (Releases) to get an email notification when a new version is automatically built!
 
-*Release attachments are all built and uploaded by Github Action, you are welcome to review the [build.yml](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/edit/main/.github/workflows/Build.yml) source code and suggest changes.
+*Release attachments are built and uploaded by Github Action, feel free to review the [build.yml](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/edit/main/.github/workflows/Build) source code and suggest changes.
+
+*As for any better way to publish, please feel free to suggest.
 
 Default settings:
 
-Runs once every Friday at 12:00 (UTC+0), and automatically runs after modifying the workflow file. If the version number already exists, the release will be skipped. (These options are disabled by default to prevent misuse)
+Run once a week at 12:00 UTC on Fridays, automatically run after modifying the workflow file, and skip the release if the version number already exists.
 
-Build parameters: Stable version; Root access (Magisk); With Google Play; Amazon store removed.
+Official release version: build parameters: stable version stable; with root access (Magisk); with Google Play; remove Amazon store.
 
-## If you want to build yourself
+Pre-release version: build parameters: latest RP version; with root access (Magisk); with Google Play; remove Amazon store.
 
-Please do not directly fork the repository. Instead, create your own repository and then add .github/workflows/Build.yml.
+<details>
+<summary><h2>How to build it yourself</h2></summary>
+<p>Please don't Fork the repository directly, <a href="https://github.com/new/import">import the repository</a>yourself and fill in the following url <code>https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild</code></p>
 
-Because some people are indiscriminately forking this repository, all automatic activators are deactivated by default, please enable them yourself. The operation of releasing releases will be activated by an action in another private repository.
+After finishing, you need to open the file under /.github/workflows and change the preset value of Setup Parameters step to the upstream base repository and release repository you need.
 
-Required private variable: [secrets.PUBLISH_TOKEN](https://github.com/settings/tokens), for accessing GitHub and releasing, please grant 'repo', 'read:org' permissions.
-
-Change the repository addresses to your own.
-
-## Running
-
-Fill in the parameters of build.sh in advance, skip run.sh and execute directly (if you need to modify parameters, please get them in run.sh), and publish using Github Releases.
-
-If there is a better way to release, you can also suggest it.
+Repository required private variable: [secrets.PUBLISH_TOKEN](https://github.com/settings/tokens) for accessing github and publishing, please give 'repo', 'read:org' permission.
+</details>
 
 ## Disclaimer
 
