@@ -29,7 +29,7 @@ Fork会导致你Fork的仓库的github action计数最终统计到上游仓库�
 
 <details>
 <summary><h2>如何自己构建</h2></summary>
-请不要直接Fork仓库，自己[创建仓库](https://github.com/new/import)，并填入以下网址`https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild`
+<p>请不要直接Fork仓库，自己<a href="https://github.com/new/import">创建仓库</a>，并填入以下网址<code>https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild</code></p>
 
 在完成后，需要打开/.github/workflows下的文件并修改Setup Parameters步骤的预设值为你需要的上游基础仓库和发布仓库。
 
