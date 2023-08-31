@@ -26,15 +26,17 @@ Fork会导致你Fork的仓库的github action计数最终统计到上游仓库�
 
 预发布版：build参数：最新版RP；有root权限(Magisk)；带Google Play；移除Amazon store。
 
-## 如果要自己构建
 
-请不要直接Fork仓库，自己创建仓库后将.github/wokflows/Build.yml填入即可。
+<details>
+<summary><h2>如何自己构建</h2></summary>
+请不要直接Fork仓库，自己[创建仓库](https://github.com/new/import)，并填入以下网址`https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild`
 
-必需私有变量：[secrets.PUBLISH_TOKEN](https://github.com/settings/tokens)，用于访问github并发布，请给予'repo', 'read:org'权限。
+在完成后，需要打开/.github/workflows下的文件并修改Setup Parameters步骤的预设值为你需要的上游基础仓库和发布仓库。
 
-相关仓库地址什么的改成自己的。
+仓库必需私有变量：[secrets.PUBLISH_TOKEN](https://github.com/settings/tokens)，用于访问github并发布，请给予'repo', 'read:org'权限。
+</details>
 
-## 运行
+## 运行原理
 
 提前预填好build.sh的参数，跳过run.sh直接执行（需要修改参数请run.sh里获取），使用Github Releases发布。
 
