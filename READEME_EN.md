@@ -96,4 +96,4 @@ If this project has helped you, please give it a Star. This is an affirmation of
 
 Android is a trademark of Google LLC. Windows is a trademark of Microsoft Corporation.
 
-Translate By ChatGPT-4
+Translate By ChatGPT-4 && Google && DeeplL
