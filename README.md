@@ -2,6 +2,10 @@
 
 ## [点击下载最新版本](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/releases/latest)
 
+# 公告
+
+由于LSPosed上游长时间未更新，无法正常完成构建，构建文件源已转移至有维护的https://github.com/YT-Advanced/MagiskOnWSALocal.git
+
 # ⚠️重要提示⚠️ 
 
 **如果你不阅读这些提示，你和你的家人可能受到我的辱骂——这是对他人劳动成果的不尊重**
