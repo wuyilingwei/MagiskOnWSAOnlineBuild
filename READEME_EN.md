@@ -2,6 +2,9 @@
 
 ## [Click to download the latest version](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/releases/latest)
 
+# Announcement
+As the LSPosed upstream has not been updated for a long time, it is not possible to complete the build properly, the build file source has been moved to https://github.com/YT-Advanced/MagiskOnWSALocal.git which has a maintenance
+
 ## ⚠️ Important Tips ⚠️ 
 
 **If you don't read these tips, you and your family may be subjected to verbal abuse from me - this is disrespectful to the fruits of other people's labour**
