@@ -70,7 +70,7 @@ For problems with the computer being unable to install the Android subsystem and
 
 MagiskOnWSALocal is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-The release and code of this project must comply with the [Anti Labor Oppression License](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/blob/main/Additional_LICENSE_CN)
+Use the release and code of this project must comply with the [Anti Labor Oppression License](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/blob/main/Additional_LICENSE_CN)
 
 ## 星标
 
