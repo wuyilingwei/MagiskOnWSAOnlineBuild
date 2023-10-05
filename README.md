@@ -61,7 +61,7 @@ Fork会导致你Fork的仓库的github action计数最终统计到上游仓库�
         
 ## 技术支持
         
-本项目不提供关于安卓子系统的任何技术支持，如果自动构建不正常或者有什么建议，在本仓库请提出一个[新的Issue](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/issues/new)。
+本项目不提供关于安卓子系统的任何技术支持，如果自动构建不正常或者有什么建议，请在本仓库提出一个[新的Issue](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/issues/new)。
         
 关于Root权限及Google Play运行异常的问题请在MagiskOnWSA提出一个[新的Issue](https://github.com/LSPosed/MagiskOnWSALocal/issues/new/choose)。
 
@@ -71,7 +71,7 @@ Fork会导致你Fork的仓库的github action计数最终统计到上游仓库�
 
 MagiskOnWSALocal is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-使用本项目发布的release与代码需遵守[反劳动压迫许可证](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/blob/main/Additional_LICENSE_CN)
+使用本项目发布的release与代码需遵守[反劳动剥削许可证](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/blob/main/Additional_LICENSE_CN)
 
 ## 星标
 
