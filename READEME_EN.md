@@ -1,4 +1,4 @@
-[Simplified Chinese](README.md) | [Engilsh](READEME_EN.md)
+[简体中文](README.md) | [Engilsh](READEME_EN.md)
 
 ## [Click to download the latest version](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/releases/latest)
 
