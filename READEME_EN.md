@@ -64,7 +64,7 @@ This project does not provide any technical support for the Android subsystem. I
         
 For 议题 related to Root access and Google Play running abnormally, please raise a [new Issue](https://github.com/LSPosed/MagiskOnWSALocal/issues/new/choose) in MagiskOnWSA.
 
-For problems with the computer being unable to install the Android subsystem and running problems with the Android subsystem, please raise a question in the [Microsoft Community](https://answers.microsoft.com/zh-hans/newthread) (Choose Windows-Windows11-Applications-Amazon Appstore)
+For problems with the computer being unable to install the Android subsystem and running problems with the Android subsystem, please raise a question in the [Microsoft Community](https://answers.microsoft.com/en-us/newthread) (Choose Windows-Windows11-Applications-Amazon Appstore)
 
 ## About Copyright
 
