@@ -65,8 +65,8 @@ jobs:
         # Upload limit, '(' ')' will use '.' install
         CFILE=$(echo $FILE | sed 's/(/./g; s/)/./g')
 
-        # Get the latest release tag
-        LATEST_RELEASE=$(gh release view --repo ${{ env.RELEASE_REPOSITORY }} --json tagName -q ".tagName" || echo "")
+        # List all release tags
+        ALL_RELEASES=$(gh release list -R ${{ env.RELEASE_REPOSITORY }} | awk '{print $1}')
         
         # Define the release note
         NOTES=$(cat << EOF
@@ -167,10 +167,9 @@ jobs:
         )
         
         # if version is exist, it will skip.
-        if [[ -z "$LATEST_RELEASE" ]] || [[ "$LATEST_RELEASE" != "$NAME" ]]
+        if [[ -z $(echo "$ALL_RELEASES" | grep "$NAME") ]]
         then
-          gh release create "$NAME" $FILE -R ${{ env.RELEASE_REPOSITORY }} -t "Magisk_On_$NAME" -n "$NOTES" --prerelease
+          gh release create "$NAME" $FILE -R ${{ env.RELEASE_REPOSITORY }} -t "Magisk_On_$NAME" -n "$NOTES"
         else
           echo "The version has not changed, skipping the release."
         fi
-          
