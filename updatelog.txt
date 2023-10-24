@@ -1,0 +1,2 @@
+2023/10/24
+solve conflict of WIF and Normal verson release problem, now it will never error if build success.
