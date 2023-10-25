@@ -4,7 +4,7 @@
 
 # 公告
 
-由于LSPosed上游长时间未更新，无法正常完成构建，构建文件源已转移至有维护的https://github.com/YT-Advanced/MagiskOnWSALocal.git
+由于LSPosed上游长时间恢复更新，构建文件源已转回至有维护的https://github.com/LSPosed/MagiskOnWSALocal.git
 
 # ⚠️重要提示⚠️ 
 
