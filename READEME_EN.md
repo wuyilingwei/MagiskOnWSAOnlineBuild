@@ -3,7 +3,8 @@
 ## [Click to download the latest version](https://github.com/yige-yigeren/MagiskOnWSAOnlineBuild/releases/latest)
 
 # Announcement
-As the LSPosed upstream has not been updated for a long time, it is not possible to complete the build properly, the build file source has been moved to https://github.com/YT-Advanced/MagiskOnWSALocal.git which has a maintenance
+
+Due to the upstream update of LSPosed, the build file source has been transferred back to the original warehouse.
 
 ## ⚠️ Important Tips ⚠️ 
 
@@ -96,4 +97,4 @@ If this project has helped you, please give it a Star. This is an affirmation of
 
 Android is a trademark of Google LLC. Windows is a trademark of Microsoft Corporation.
 
-Translate By ChatGPT-4 && Google && DeeplL
+Translate maybe have problem, if you think anything have problem can tell me.
