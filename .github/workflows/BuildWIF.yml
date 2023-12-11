@@ -19,7 +19,7 @@ jobs:
     - name: Setup Parameters
       run: |
         # setup your parameter here
-        echo "BASE_REPOSITORY=https://github.com/LSPosed/MagiskOnWSALocal.git" >> $GITHUB_ENV
+        echo "BASE_REPOSITORY=https://github.com/YT-Advanced/MagiskOnWSALocal.git" >> $GITHUB_ENV
         echo "RELEASE_REPOSITORY=yige-yigeren/MagiskOnWSAOnlineBuild" >> $GITHUB_ENV
         echo "PARAMETER="--arch x64 --release-type WIF --root-sol magisk --gapps-brand MindTheGapps --remove-amazon --magisk-ver stable --compress-format zip"" >> $GITHUB_ENV
 
