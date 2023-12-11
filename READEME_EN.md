@@ -4,7 +4,7 @@
 
 # Announcement
 
-Due to the upstream update of LSPosed, the build file source has been transferred back to the original warehouse.
+Due to LSPosed upstream not fixing the error for a long time, the git source goes to https://github.com/YT-Advanced/MagiskOnWSALocal.git
 
 ## ⚠️ Important Tips ⚠️ 
 
