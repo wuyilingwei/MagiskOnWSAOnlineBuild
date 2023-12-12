@@ -165,7 +165,7 @@ jobs:
         # if version is exist, it will skip.
         if [[ -z $(echo "$ALL_RELEASES" | grep "$NAME") ]]
         then
-          gh release create "$NAME" $FILE -R ${{ env.RELEASE_REPOSITORY }} --prerelease -t "Magisk_On_$NAME" -n "$NOTES"
+          gh release create "$NAME" $FILE -R ${{ env.RELEASE_REPOSITORY }} -t "Magisk_On_$NAME" -n "$NOTES"
         else
           echo "The version has not changed, skipping the release."
         fi
